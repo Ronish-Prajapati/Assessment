@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+<body>
+
+<form id="regForm" action="">
+  <h1>Register:</h1>
+  <!-- One "tab" for each step in the form: -->
+  <div class="tab "><h4>Name:</h4>
+    <p><input type="text" placeholder="First name..." oninput="this.className = ''" name="First name"></p>
+    <p><input type="text" placeholder="Last name..." oninput="this.className = ''" name="Last name"></p>
+  </div>
+  <div class="tab"><h4>Contact Info:</h4>
+    <p><input type="email" placeholder="E-mail..." oninput="this.className = ''" name="Email"></p>
+    <p><input type="phone" placeholder="Phone..." oninput="this.className = ''" name="Phone" id="phone">
+      <span id="phone-error" class="hide required-color error-message"
+      >Phone Number Should Have 10 Digits</span
+    >
+    <span id="empty-phone" class="hide required-color error-message">
+      Phone cannot be empty
+    </span></p>
+  </div>
+  <div class="tab"><h4>Gender:</h4>
+      <p>
+      <input type="radio" oninput="this.className = ''" name="Gender" value="Male" >
+      <label for="Male">Male</label>
+      <input type="radio" oninput="this.className = ''" name="Gender" value="Female" >
+      <label for="Female" class="label">Female</label>
+      <input type="radio" oninput="this.className = ''" name="Gender" value="Others" >
+      <label for="Others">Others</label><br>
+      <br>
+      <h4>Feilds</h4>
+      <p id="check">
+      <input type="radio" oninput="this.className = ''" name="Field" value="Software Engineering" >   
+      <label for="Software Engineering">Software Engineering</label><br>
+      <input type="radio" oninput="this.className = ''" name="Field" value="Web Development" >   
+      <label for="Web Developmen">Web Development</label><br>
+      <input type="radio" oninput="this.className = ''" name="Field" value="Data Analysis" >   
+      <label for="Data Analysis">Data Analysis</label><br>
+      <input type="radio" oninput="this.className = ''" name="Field" value="Machine Learning" >   
+      <label for="Machine Learning">Machine Learning</label><br>
+      <input type="radio" oninput="this.className = ''" name="Field" value="Digital Marketing" >   
+      <label for="Digital Marketing">Digital Marketing</label>
+      </p>
+    </p>
+  </div>
+  
+  <div class="tab tab1">Login Info:
+    <p><input type="text" placeholder="Username..." oninput="this.className = ''" name="Username"></p>
+    <p ><input type="password" id="password" placeholder="Password..." oninput="this.className = ''" name="Password" type="password" required>
+      <span id="password-error" class="hide required-color error-message">
+        Passwords Should Have Letter, Special symbols, Numbers And Length >=
+        8
+      </span>
+      <span id="empty-password" class="hide required-color error-message">
+        Password Cannot Be Empty
+      </span>
+    </p>
+  </div>
+  <div class="tab"><h3>Confirmation:</h3>
+    <div id="summary"></div>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+    </div>
+  </div>
+  <!-- Circles which indicates the steps of the form: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+<script src="main.js"></script>
+</body>
+</html>
